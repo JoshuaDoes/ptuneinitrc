@@ -54,6 +54,9 @@ func (irc *initrc) getServices() []*service {
 			for i := l + 1; i < len(lines); i++ {
 				l = i
 				svcLine := lines[i]
+				if svcLine == "" {
+					continue
+				}
 				if strings.HasPrefix(whitespacer(svcLine), "#") {
 					continue
 				}
